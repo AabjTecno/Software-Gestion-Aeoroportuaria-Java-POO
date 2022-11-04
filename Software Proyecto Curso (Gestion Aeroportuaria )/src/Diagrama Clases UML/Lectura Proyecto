@@ -1,0 +1,155 @@
+Lectura de Proyecto y Creaccion de Diagrama de Clases : 
+
+
+Software Para Gestion Aeroportuaria >>>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<MENU MENU MENU MENU MENU MENU MENU >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+
+La Aplicacion tendra un Menu con las siguientes Opciones :  
+1. Consultar los aeropuertos  gestionados , indicando separadamente los aeropuertos publicos  
+y los privados . Para cada uno de ellos debera mostrar su nombre , la ciudad de Ubicacion , y 
+el pais al que pertenece .  
+
+2. Visualizar las Empresas que patrocinan un determinado aeropuerto en caso que sea privado o , 
+la cuantia de la subvencion en caso de que se trate de un Aeropuerto publico .  
+
+3. Para un Determinado aeropuerto se debe poder mostrar la lista de compañias que vuelan desde ese  
+aeropuerto . 
+
+4. Para una Determinada compañia que opera en un aeropuerto concreto , listar todos los posibles vuelos que dicha
+compañia  ofrece , mostrando su identificador , la ciudad origen y destino y el precio de vuelo .  
+
+5. Mostrar todos los Posibles vuelos (Indentificador ) que parte de una ciudad a otra ciudad destino 
+(Indicadas por el usuario ) y Mostrar su Precio .  
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<MENU MENU MENU MENU MENU MENU MENU >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+-----------------------------------------------------------------------------------------------------
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CODIFICACION CODIFICACION CODIFICACION>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+-| Diseñar y codificar una aplicacion informatica para una compañia de Gestion Aeroportuaria 
+	satisfaciendo los siguientes requisitos : 
+	
+.	||Para cada aeropuerto es necesario saber||  // Clase Aeropuerto 
+
+A) . Todas las compañias de vuelos que operan en el . 
+B) . Nombre del aeropuerto , la ciudad donde se ubica y el pais que pertenece 
+
+.||Cada Compañia se Caracteriza por el Nombre y la lista de vuelos que ofrece .:|| // Clase Compañia 
+
+Los Vuelos estan definidos por su indentificador , la ciudad de origen , la ciudad destino y el precio 
+del viaje , la lista de pasajeros , el numero maximo de pasajeros permitidos en el vuelo y el numero 
+real de pasajeros que ha reservado asiento en el avion . 
+
+.|| Los Aeropuertos puede ser privados y publicos   
+	
+A)- Los aeropuertos privados tienen una serie de empresas que la patrocinan y es necesario saber el nombre 
+de cada una de esas empresas .  
+
+B)- Para los aeropuertos publicos se requiere saber la cantidad de dinero correspondiente a  la subvencion 
+Gubernamental . 
+
+.|| Se Necesita Gestionar tambien la Informacion de los pasajeros .|| // Clase Pasajeros 
+
+A) Para cada pasajero se necesita saber nombre , numero de pasaporte y Nacionalidad . 
+
+
+Explicacion :  
+
+Aeropuerto va hacer una clase padre  , dentro de aeropuerto van a ver dos clases hijas (aeropuerto privado , aeropuerto publico )  
+los aeropuerto privados necesita de empresas (Compañia ) para el publico la cantidad de dinero .  
+
+En las clases de aeropuerto van a necesitar clase compañia , y en compañia va necsitar vuelos  y en los vuelos hay pasajeros .  
+comenzariamos por la clase pasajeros porque no necesita de una clase .
+
+
+// Diagrama de Clases // 
+
+----Clase Pasajero-------------| ------------------------------Clase 1 
+							   |
+- Nombre : String  
+-Pasaporte: String  
+-nacionalidad : String  
+---------Metodos------------------- 
++Pasajeros (nombre : String , Pasaporte : String , nacionalidad: String ) 
++getNombre  
++getPasaporte  						  |
++getNacioalidad   					  |
+--------------------------------------| 
+
+-----Clase Vuelo ---------------------|------------------------Clase Vuelo 2 
+
+-Identificador : String  
+-ciudadOrigen : String 
+-CiudadDestino : String  
+-precio : double  
+-numMaxPasajeros : int  
+-numActualPasajeros : int  
+-ListaPasajeros []; 
+
+--------Metodos ----------------------|
++Vuelo (id : String , ciudadO : Strig , ciudadDEST : String , precio : double , nummax : )  |
++getindentificador () : String 
++getPasajero (precio : Pasajero ):void    
++getciudadOrigen (): String 	
++getCiudadDestino ():String 
++getPrecio (): Double  
++getNumMaxpasajeros ():int  
++getNumActualPasajeros (): int  
++getPasajero (i: int ): Pasajero 
++getPasajero(Pasaporte : String ): Pasajero  
+
+------------------------------------< 
+
+
+------Clase Compañia --------------------------
+
+-Nombre : String  
+-ListaVuelo : Vuelo [] 
+-numVuelo : Int =0 
+
+--------Metodos ----------------------------- 
+
++Compañia (n : String ) 
++Comapñia (n : String , v : vuelo )
++InsertarVuelo (vuelo : vuelo ): Void  
++ getnombre : String 
++getNumeroVuelos (): int  
++getVuelo(i : int ) : Vuelo  
++getVuelo (id : String ): Vuelo  			   |
+										       |
+-----------------------------------------------|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Gestionar Informacion de Pasajero (Clase Pasajero ) .  
+
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<CODIFICACION CODIFICACION CODIFICACION>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<PASOS CREACCION DEL PROGRAMA>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+								 
+
+1. Diseñar Clase UML  
+2. Codificar en Java  
+3.Hacer cada Opcion del Menu  
